@@ -1,153 +1,66 @@
-// import { useState } from "react";
-// import { FaFacebookSquare, FaInstagram, FaWhatsapp } from "react-icons/fa";
-// import { GiHamburgerMenu } from "react-icons/gi";
+import olx from "../../assest/olx.svg";
+import olxTop from "../../assest/olx top.svg";
+import car from "../../assest/car-front.svg";
+import building from "../../assest/building.svg";
+ import { GiHamburgerMenu } from "react-icons/gi";
+import { useState } from "react";
 
-// function Navbar() {
-//     const [showMediaIcon, setShowMediaIcon] = useState(false)
-//     return (
-//         <>
-//             <nav className="main-nav" >
-//                 {/* 1st logo part */}
-//                 <div className="logo">
-//                     <h2>
-//                         Usama Javed
-//                     </h2>
-//                 </div>
-//                 {/* 2nd menu part */}
-//                 <div className={showMediaIcon ? "menu-link mobile-menu-link" : "menu-link"}>
-//                     <ul className="social-media-desktop">
-//                         <li>
-//                             <a href="#">Home</a>
-//                         </li>
-//                         <li>
-//                             <a href="#">About</a>
-//                         </li>
-//                         <li>
-//                             <a href="#">Service</a>
-//                         </li>
-//                         <li>
-//                             <a href="#">Contant</a>
-//                         </li>
-//                     </ul>
-//                 </div>
-//                 {/* 3rd media icons */}
-//                 <div className= "social-media" >
-//                     <ul>
-//                         <li>
-//                             <a href="https://www.facebook.com/"><FaFacebookSquare /></a>
-//                         </li>
-//                         <li>
-//                             <a href="https://www.instagram.com/"><FaInstagram /></a>
-//                         </li>
-//                         <li>
-//                             <a href="https://web.whatsapp.com/"><FaWhatsapp /></a>
-//                         </li>
-//                     </ul>
-//                 </div>
-//                     <div className="hamburger-menu">
-//                         <a href="#" onClick={()=> setShowMediaIcon(!showMediaIcon)} >
-//                             <GiHamburgerMenu />
-//                         </a>
-//                     </div>
-//             </nav>
-//             {/* Section Title */}
-//             {/* <section>
-//                 <p>Welcome to</p>
-//                 <h1>Usama Project</h1>
-//             </section> */}
-//         </>
-//     );
-// };
+function Navbar() {
+    const [showMediaIcons, setshowMediaIcons] = useState(false)
 
-// export default Navbar;
+    return (
+        <>
+            <header className="main-header">
+                    <div className="hamburger-menu">
 
-import React, { useState } from "react";
-// import "./navbar.css";
-import {
-  FaFacebookSquare,
-  FaInstagramSquare,
-  FaYoutubeSquare,
-} from "react-icons/fa";
-import { GiHamburgerMenu } from "react-icons/gi";
+                        <a href="#" onClick={() => setshowMediaIcons(!showMediaIcons)}>
+                            <GiHamburgerMenu/> 
+                        </a>
+                    </div>
+                <div className="logos">
+                    <img  style={{
+                        width: '65%'
+                    }} src={olxTop} />
+                </div>
+                <div className="car">
+                    <img style={{
+                        width: '15%'
+                    }} src={car} />
+                    <p>MOTORS</p>
+                </div>
+                <div className="building">
+                    <img style={{
+                        width: '15%'
+                    }} src={building} />
+                    <p>PROPERTY</p>
+                </div>
+            </header>
+            <nav className="main-nav">
+                {/* 1st logo */}
+                <div className="logo">
+                    <img style={{
+                        width: '100%'
+                    }} src={olx} />
+                </div>
+                {/* Search Bar */}
 
-import { NavLink } from "react-router-dom";
+                <div className="place-holder">
+                    <input placeholder="Pakistan" />
+                </div>
 
-const Navbar = () => {
-  const [showMediaIcons, setShowMediaIcons] = useState(false);
-  return (
-    <>
-      <nav className="main-nav">
-        {/* 1st logo part  */}
-        <div className="logo">
-          <h2>
-            <span>T</span>hapa
-            <span>T</span>echnical
-          </h2>
-        </div>
+                <div className="place-holder2">
+                    <input placeholder="Fine Car,Mobile Phone And More..." />
+                </div>
 
-        {/* 2nd menu part  */}
-        <div
-          className={
-            showMediaIcons ? "menu-link mobile-menu-link" : "menu-link"
-          }>
-          <ul>
-            <li>
-              <NavLink to="/">Home</NavLink>
-            </li>
-            <li>
-              <NavLink to="/about">about</NavLink>
-            </li>
-            <li>
-              <NavLink to="/service">services</NavLink>
-            </li>
-            <li>
-              <NavLink to="/contact">contact</NavLink>
-            </li>
-          </ul>
-        </div>
+                {/* buttons icons */}
+                <div className={showMediaIcons ? "menu-link mobile-menu-link" :"menu-link"}>
+                    <button className="btn1"><u>login</u></button>
+                    <button className="btn1">+sell</button>
 
-        {/* 3rd social media links */}
-        <div className="social-media">
-          <ul className="social-media-desktop">
-            <li>
-              <a
-                href="https://www.youtube.com/channel/UCwfaAHy4zQUb2APNOGXUCCA"
-                target="_thapa">
-                <FaFacebookSquare className="facebook" />
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.instagram.com/thapatechnical/"
-                target="_thapa">
-                <FaInstagramSquare className="instagram" />
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.youtube.com/channel/UCwfaAHy4zQUb2APNOGXUCCA"
-                target="_thapa">
-                <FaYoutubeSquare className="youtube" />
-              </a>
-            </li>
-          </ul>
-
-          {/* hamburget menu start  */}
-          <div className="hamburger-menu">
-            <a href="#" onClick={() => setShowMediaIcons(!showMediaIcons)}>
-              <GiHamburgerMenu />
-            </a>
-          </div>
-        </div>
-      </nav>
-
-      {/* hero section  */}
-      <section className="hero-section">
-        <p>Welcome to </p>
-        <h1>Thapa Technical</h1>
-      </section>
-    </>
-  );
+                </div>
+            </nav>
+        </>
+    )
 };
 
 export default Navbar;

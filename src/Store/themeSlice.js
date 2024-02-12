@@ -6,7 +6,7 @@ const themeSlice = createSlice({
     theme: 'red'
   },
   reducers: {
-     setTheme: (state, data)=>{
+     updateTheme: (state, data)=>{
 
          state.theme = data.payload
      }
@@ -14,6 +14,6 @@ const themeSlice = createSlice({
   }
 })
 
-export const { setTheme} = themeSlice.actions
+export const { updateTheme} = themeSlice.actions
   
 export default themeSlice;

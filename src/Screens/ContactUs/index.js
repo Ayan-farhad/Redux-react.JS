@@ -7,22 +7,45 @@ function ContactUs() {
     return (
         <div>
             <Header/>
-            <div style={{ width: '70%', height: '300px', background: 'bisque', margin: '0px auto' }}>
+            <br />
+            <div style={divStyle}>
 
-                <div >
-                <button onClick={()=>navigate('/ContactUS')}
-                     style={{width:'30%', height:'60px'}} >ContactUs</button>
+                <button onClick={() => navigate('/ContactUS')}
+                    style={contactBtn} >ContactUs</button>
 
-                    <button onClick={()=>navigate('/AboutUs')}
-                    style={{width:'30%', height:'60px'}} >AboutUs</button>
+                <button onClick={() => navigate('/AboutUs')}
+                    style={aboutBtn} >AboutUs</button>
 
-                    <button onClick={()=>navigate('/Detail')}
-                    style={{width:'30%', height:'60px'}} >Detail</button>
-                </div>
-                <h1>ContactUS page</h1>
+                <button onClick={() => navigate('/Detail')}
+                    style={detailBtn} >Detail</button>
+            <h1>ContactUS page</h1>
             </div>
         </div>
     )
 }
 
 export default ContactUs;
+
+const divStyle ={
+    backgroundColor: 'bisque',
+    width: '100%',
+    height: '300px',
+    textAlign: 'center',
+    
+};
+const contactBtn = {
+    backgroundColor: 'rgb(147, 112, 181)',
+    width: '150px',
+    height: '50px',
+};
+const aboutBtn = {
+    backgroundColor: 'rgb(147, 112, 181)',
+    width: '150px',
+    height: '50px',
+    
+};
+const detailBtn = {
+    backgroundColor: 'rgb(147, 112, 181)',
+    width: '150px',
+    height: '50px',
+};
